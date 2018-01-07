@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Maps Application!</title>
+	<style type="text/css">
+		#map
+		{
+			height: 400px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body background="pink.jpeg" >
+<h1>My Map!</h1>
+<div id = "map"></div>
+<script type="text/javascript">
+
+
+	function initMap()
+	{
+		
+        var Hamden = {lat: 41.383878, lng:-72.902606 };
+
+        var WestWoodsSchool = {lat: 41.431668 , lng: -72.926678};
+
+		var HamdenYMCA = {lat:41.391765, lng: -72.924457}; 
+
+		var map = new google.maps.Map(document.getElementById('map'), {zoom: 15 , center: Hamden, maptypeId: 'satellite'}) ; 
+
+		//var marker = new google.maps.Marker({position: HamdenYMCA , map: map}) ; 
+
+		 new google.maps.Marker({position: WestWoodsSchool , map: map}) ;
+		//var marker2 = new google.maps.Marker({position: HamdenYMCA , map: map}) ;
+		//var marker3 = new google.maps.Marker({position: Hamden , map: map}) ;
+		new google.maps.Marker({position: HamdenYMCA , map: map}) ;
+		new google.maps.Marker({position: Hamden , map: map}) ;
+	}
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRRHQard8PSlH3Cql108co5UpJm4vI4m8&callback=initMap"> </script>
+</body>
+</html>
